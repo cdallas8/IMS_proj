@@ -11,3 +11,5 @@ print("You entered $mname and $myear")
 $sql = "INSERT INTO movies (mid, mname, myear, mgenreid, mrating) VALUES (NULL, '$mname', '$myear') ";
 $result = $mysqli->query($sql);
 ?>
+
+<a href="dbindex.php">Return to main page</a>
