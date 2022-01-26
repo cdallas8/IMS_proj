@@ -1,11 +1,11 @@
-<form action="add_movie.php" method="POST">
-    <input type="text" name="mid"> <br>
-    <input type="text" name="mname"> <br>
-    <input type="text" name="myear"> <br>
-    <input type="text" name="mgenreid"> <br>
-    <input type="text" name="mrating"> <br>
-    <input type="submit" value="Add Movie">
-</form>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Movies page</h>
 
 <?php
 include 'createdb.php '; //establish database connection script
@@ -19,3 +19,14 @@ print "<option value='$catid>$catname</option>";
 include 'disconnect.php'; //close database connection script
 }
 ?></select>
+
+
+<form action="add_movie.php" method="POST">
+    <input type="text" name="mid"> <br>
+    <input type="text" name="mname"> <br>
+    <input type="text" name="myear"> <br>
+    <input type="text" name="mgenreid"> <br>
+    <input type="text" name="mrating"> <br>
+    <input type="submit" value="Add Movie">
+</form>
+
