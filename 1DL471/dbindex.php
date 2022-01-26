@@ -7,26 +7,38 @@
 <body>
     <h1>Movies page</h>
 
-<?php
-include 'createdb.php '; //establish database connection script
-$result = mysqli_query link,"select id, name from categorytable ");
-while($row = mysqli_fetch_assoc ($result)) {
-$catid = $row["id"];
-$catname = $row["name"];
-//here we display category name in drop down list and pass catid value when posting back to ( add_book.php
-print "<option value='$catid>$catname</option>";
-}
-include 'disconnect.php'; //close database connection script
-}
-?></select>
 
+<?php
+include "connect.php";
+include "createdb.php"; //establish database connection script
+?>
 
 <form action="add_movie.php" method="POST">
-    <input type="text" name="mid"> <br>
+    Please add a movie title: <br>
     <input type="text" name="mname"> <br>
+    Please enter the release year:<br>
     <input type="text" name="myear"> <br>
-    <input type="text" name="mgenreid"> <br>
+    <select name = "category"> <br>
+    <?php
+    $result = mysqli_query ($link,"select gid, mgenre from genres");
+    while($row = mysqli_fetch_assoc ($result)) {
+    $catid = $row["gid"];
+    $catname = $row["mgenre"];
+    //here we display category name in drop down list and pass catid value when posting back to ( add_movie.php
+    print "<option value='$catid>$catname</option>";
+    }
+?> </select>
+
+    // <input type="text" name="mgenreid"> <br>
+
     <input type="text" name="mrating"> <br>
     <input type="submit" value="Add Movie">
 </form>
 
+<?php
+include "disconnect.php"; //close database connection script
+?>
+
+
+</body>
+</html>
