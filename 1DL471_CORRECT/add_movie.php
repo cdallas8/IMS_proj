@@ -21,17 +21,11 @@ $result = mysqli_query($link, $sql_insert);
 if($result){
     echo "Record inserted successfully";
 } else {
-    echo "Something went wrong.";
+    echo "Something went wrong while adding the movie.";
 }
-// $sql = "INSERT INTO $movies (mid,mname,myear,mgenreid,mrating) VALUES ('$mname','$myear',NULL,NULL)";
-// $result = $mysqli->query($sql);
+
 ?>
 
-<!--
-<html>
-<a href="dbindex.php">Return to main page</a>
-</html>
--->
 <form action="dbindex.php" method="POST">
     <input type="submit" value="Add another movie">
 </form>
